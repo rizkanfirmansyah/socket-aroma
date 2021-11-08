@@ -18,6 +18,7 @@
     "mysql": "^2.18.1",
     "nodemon": "^2.0.13",
     "querystring": "^0.2.1",
+    "routes": "^2.1.0",
     "socket.io": "^4.2.0"
   }
 }

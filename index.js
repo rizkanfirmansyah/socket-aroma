@@ -6,6 +6,7 @@ var url = require("url");
 var mysql = require("mysql");
 var fs = require("fs");
 var gString = require("querystring");
+var Router = require('routes')()
 
 var connection = mysql.createConnection({
   host: "localhost",
@@ -22,6 +23,10 @@ const router = require("./router");
 const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
+
+app.get('/', function(request, res){
+    res.sendFile(__dirname + '/templates/index.html');
+});
 
 io.on("connection", (socket) => {
   socket.on("join", ({ name, socketId }) => {
